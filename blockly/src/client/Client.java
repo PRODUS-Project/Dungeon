@@ -71,7 +71,11 @@ public class Client {
   private static void onSetup() {
     Game.userOnSetup(
         () -> {
-          DungeonLoader.instance().addLevel(new Tuple<>("maze", MazeLevel.class));
+          DungeonLoader.instance().addLevel(Tuple.of("beginner11", MazeLevel.class));
+          DungeonLoader.instance().addLevel(Tuple.of("beginner12", MazeLevel.class));
+          DungeonLoader.instance().addLevel(Tuple.of("beginner13", MazeLevel.class));
+          DungeonLoader.instance().addLevel(Tuple.of("beginner14", MazeLevel.class));
+          DungeonLoader.instance().addLevel(Tuple.of("beginner15", MazeLevel.class));
           createSystems();
           createHero();
           Crafting.loadRecipes();
@@ -82,7 +86,7 @@ public class Client {
           LevelSystem levelSystem = (LevelSystem) ECSManagment.systems().get(LevelSystem.class);
           levelSystem.onEndTile(() -> DungeonLoader.instance().loadNextLevel());
 
-          DungeonLoader.instance().loadLevel("maze");
+          DungeonLoader.instance().loadLevel("beginner11");
         });
   }
 
