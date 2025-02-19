@@ -76,12 +76,12 @@ public class DevDungeon {
         () -> {
           DungeonLoader.instance()
               .addLevel(
-                  new Tuple("tutorial", TutorialLevel.class),
-                  new Tuple("damagedBridge", DamagedBridgeRiddleLevel.class),
-                  new Tuple("torchRiddle", TorchRiddleLevel.class),
-                  new Tuple("illusionRiddle", IllusionRiddleLevel.class),
-                  new Tuple("bridgeGuard", BridgeGuardRiddleLevel.class),
-                  new Tuple("finalBoss", BossLevel.class));
+                  Tuple.of("tutorial", TutorialLevel.class),
+                  Tuple.of("damagedBridge", DamagedBridgeRiddleLevel.class),
+                  Tuple.of("torchRiddle", TorchRiddleLevel.class),
+                  Tuple.of("illusionRiddle", IllusionRiddleLevel.class),
+                  Tuple.of("bridgeGuard", BridgeGuardRiddleLevel.class),
+                  Tuple.of("finalBoss", BossLevel.class));
           LevelSystem levelSystem = (LevelSystem) ECSManagment.systems().get(LevelSystem.class);
           levelSystem.onEndTile(() -> DungeonLoader.instance().loadNextLevel());
 

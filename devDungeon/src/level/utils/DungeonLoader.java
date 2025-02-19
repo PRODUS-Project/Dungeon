@@ -119,7 +119,8 @@ public class DungeonLoader {
    * @see #levelOrder()
    * @see #loadNextLevel()
    */
-  public void addLevel(Tuple<String, Class<? extends DevDungeonLevel>>... level) {
+  @SafeVarargs
+  public final void addLevel(Tuple<String, Class<? extends DevDungeonLevel>>... level) {
     for (Tuple<String, Class<? extends DevDungeonLevel>> levelEntry : level) {
       levelOrder.add(levelEntry);
     }
