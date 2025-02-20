@@ -12,6 +12,7 @@ public record Tuple<A, B>(A a, B b) {
 
   /**
    * Create a new tuple.
+   *
    * @param first The first value.
    * @param second The second value.
    * @return The new tuple.
